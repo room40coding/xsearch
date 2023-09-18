@@ -35,7 +35,7 @@
         <column xsi:type="varchar" name="user_key" nullable="false" comment="User" length="255"/>
         <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP"
                 comment="Created At"/>
-        <column xsi:type="int" name="query_id" padding="10" unsigned="false" nullable="false" identity="false"
+        <column xsi:type="int" name="query_id" padding="10" unsigned="true" nullable="false" identity="false"
                 default="0" comment="Query Id"/>
         <column xsi:type="smallint" name="product_click" padding="10" unsigned="false" nullable="true" identity="false"
                 comment="Click On Product"/>
@@ -61,6 +61,15 @@
         <index referenceId="AMASTY_XSEARCH_USERS_SEARCH_QUERY_ID" indexType="btree">
             <column name="query_id"/>
         </index>
+
+        <constraint xsi:type="foreign"
+                    referenceId="AMASTY_XSEARCH_USERS_SEARCH_QUERY_ID_SEARCH_QUERY_QUERY_ID"
+                    table="amasty_xsearch_users_search"
+                    column="query_id"
+                    referenceTable="search_query"
+                    referenceColumn="query_id"
+                    onDelete="CASCADE"
+        />
     </table>
 
 
