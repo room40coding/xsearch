@@ -1,5 +1,5 @@
 {
-    "name": "amasty\/xsearch",
+    "name": "room40coding\/xsearch",
     "description": "Search Autocomplete by Amasty",
     "require": {
         "php": "^7.3.0",
